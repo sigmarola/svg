@@ -1,10 +1,4 @@
-.box {
-	background-color: red;
-	height: 5em;
-	width: 5em;
-	margin: 2em;
-}
-#MyRect {
-	fill: red;
-	stroke: black;
+
+svg{
+    margin:3em;
 }
