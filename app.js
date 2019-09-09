@@ -1,26 +1,29 @@
-/*anime({
-  targets: 'div',
-  translateX: 250,
-  rotate: '1turn',
-  backgroundColor: '#FFF',
-  duration: 800
-});*/
-
-function handler(e) {
-    e = e || window.event;
-
-    var pageX = e.pageX;
-    var pageY = e.pageY;
-
-    // IE 8
-    if (pageX === undefined) {
-        pageX = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-        pageY = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-    }
-
-    console.log(pageX - 8, pageY - 8);
-}
-
-// attach handler to the click event of the document
-if (document.attachEvent) document.attachEvent('onclick', handler);
-else document.addEventListener('click', handler);
+let tl = anime.timeline({
+    easing: 'easeOutSine',
+    duration: 750,
+    loop:false
+  });
+tl.add({
+    targets: ".an1",
+    translateX:[ {value:"-20",duration:400},
+                {value:"20",duration:200}],
+    translateY: [ {value:"-20",duration:400},
+                {value:"-13",duration:200}],
+    rotate: "20"
+})
+  .add({
+    targets: ".an2",
+    translateX:[ {value:"80",duration:400},
+                {value:"40",duration:200}],
+    translateY: [ {value:"-20",duration:400},
+                {value:"-20",duration:200}],
+    rotate: "20"
+  })
+  .add({
+    targets: ".an3",
+    translateX:[ {value:"-20",duration:400},
+    {value:"40",duration:200}],
+translateY: [ {value:"20",duration:400},
+    {value:"-20",duration:200}],
+    rotate: 20
+  });
